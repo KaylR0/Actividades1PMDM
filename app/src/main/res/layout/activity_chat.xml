@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatActivity"
+    android:background="@color/background_component">
+
+    <View
+        android:id="@+id/vBarra"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/bar"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
+    <TextView
+        android:id="@+id/tvFirstMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingHorizontal="20dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/hint"
+        app:layout_constraintTop_toBottomOf="@+id/vBarra"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Waiting for messages..."
+        />
+
+    <LinearLayout
+        android:id="@+id/linLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="3"
+            android:layout_margin="8dp"
+            android:background="@color/bar"
+            android:textColorHint="@color/hint"
+            android:hint="Write message!"
+            android:paddingHorizontal="5dp"
+            android:textColor="@color/hint"
+            android:textAlignment="viewStart"
+            android:textSize="17sp"
+            />
+
+        <Button
+            android:id="@+id/bSend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:text="Send"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

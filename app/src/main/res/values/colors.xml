@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_component">#AD91E1</color>
+    <color name="background_component_selected">#9A79D6</color>
+    <color name="background_obscure">#62557C</color>
+    <color name="title">#9427FF</color>
+    <color name="button">#574280</color>
+    <color name="button_selected">#403070</color>
+    <color name="hint">#E8D0ED</color>
+    <color name="text">#D38BFF</color>
+    <color name="bar">#B9A0E6</color>
+    <color name="peso_bajo">#FAED7D</color>
+    <color name="peso_normal">#7DFA82</color>
+    <color name="sobrepeso">#FD9D7F</color>
+    <color name="obesidad">#FD867E</color>
+
+
+
+</resources>
