@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,8 @@
     android:layout_height="match_parent"
     android:background="@color/bgapp_background_app"
     android:orientation="vertical"
-    tools:context=".boardGamesApp.BoardgameActivity">
+    tools:context=".boardGamesApp.BoardgameActivity"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,4 +43,21 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="16dp" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginEnd="16dp"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="Añade un juego"
+            app:backgroundTint="@color/bgapp_accent"
+            app:tint="@color/white"
+            app:fabSize="mini"
+            />
+
+
+
 </LinearLayout>
