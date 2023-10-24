@@ -50,15 +50,13 @@ class BoardgameActivity : AppCompatActivity() {
         fabAddGame = findViewById(R.id.fabAddGame)
     }
     private fun initUI(){
-        categoriesAdapter = CategoriesAdapter(categories) //RECYCLER_CATEGORIES
-        gamesAdapter = GamesAdapter(games) //RECYCLER_GAMES
+        categoriesAdapter = CategoriesAdapter(categories){ position ->onCategorySelected(position) } //RECYCLER_CATEGORIES
+        gamesAdapter = GamesAdapter(games) { position -> onGameSelected(position) }//RECYCLER_GAMES
 
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //RECYCLER_CATEGORIES
-
         rvGames.layoutManager = LinearLayoutManager(this) //RECYCLER_GAMES
 
         rvCategories.adapter = categoriesAdapter //RECYCLER_CATEGORIES
-
         rvGames.adapter = gamesAdapter //RECYCLER_GAMES
     }
     private fun initListeners() { fabAddGame.setOnClickListener{ showDialog() }
@@ -75,7 +73,8 @@ class BoardgameActivity : AppCompatActivity() {
             if(currentGame.isNotEmpty()){
                 val selectedId = rgCategories.checkedRadioButtonId
                 val selectedRadioButton: RadioButton = rgCategories.findViewById(selectedId)
-                val currentCategory: GameCategory = when(selectedRadioButton.text){
+                val currentCategory: GameCategory =
+                    when(selectedRadioButton.text){
                     getString(R.string.dialog_cooperative_category) -> GameCategory.Cooperative
                     getString(R.string.dialog_deckbuilding_category) -> GameCategory.Deckbuilding
                     getString(R.string.dialog_euro_category) -> GameCategory.Euro
@@ -94,7 +93,15 @@ class BoardgameActivity : AppCompatActivity() {
         gamesAdapter.notifyDataSetChanged()
     }
 
-
+    private fun onGameSelected(position:Int){
+        games[position].isSelected = !games[position].isSelected
+        updateGames()
+    }
+    private fun onCategorySelected(position:Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateGames()
+    }
 
 
 
