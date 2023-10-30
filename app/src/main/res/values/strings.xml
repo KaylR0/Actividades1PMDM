@@ -30,4 +30,15 @@
     <string name="dialog_LCG_category">Living Card Games</string>
     <string name="dialog_legacy_category">Legacy</string>
     <string name="dialog_newgame_button">New Game</string>
+
+    <string name="v1_20">V1 (20%)</string>
+    <string name="v2_35">V2 (35%)</string>
+    <string name="v3_50">V3 (50%)</string>
+    <string name="v4_65">V4 (65%)</string>
+    <string name="v5_80">V5 (80%)</string>
+
+    <string name="h1_20">H1 (20%)</string>
+    <string name="h2_50">H2 (50%)</string>
+    <string name="h3_80">H3 (80%)</string>
+
 </resources>
