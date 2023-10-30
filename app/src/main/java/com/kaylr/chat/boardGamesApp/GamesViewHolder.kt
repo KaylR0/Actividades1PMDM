@@ -22,8 +22,18 @@ class GamesViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         } else {
             tvGame.paintFlags = tvGame.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
         }
-
         cbGame.isChecked = game.isSelected
+
+        cbGame.setOnClickListener{
+            if (cbGame.isChecked) {
+                tvGame.paintFlags = tvGame.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            } else {
+                tvGame.paintFlags = tvGame.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+            }
+            game.isSelected=cbGame.isChecked //actualizar si está seleccionado el juego,
+            //sino cuando seleccionemos el texto nos desmarcará la casilla
+        }
+
         tvGame.text = game.name
         val color =
             when(game.category){

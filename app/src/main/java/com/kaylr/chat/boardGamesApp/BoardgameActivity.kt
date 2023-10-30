@@ -50,7 +50,7 @@ class BoardgameActivity : AppCompatActivity() {
         fabAddGame = findViewById(R.id.fabAddGame)
     }
     private fun initUI(){
-        categoriesAdapter = CategoriesAdapter(categories){ position ->onCategorySelected(position) } //RECYCLER_CATEGORIES
+        categoriesAdapter = CategoriesAdapter(categories){ position -> onCategorySelected(position) } //RECYCLER_CATEGORIES
         gamesAdapter = GamesAdapter(games) { position -> onGameSelected(position) }//RECYCLER_GAMES
 
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //RECYCLER_CATEGORIES
@@ -68,6 +68,7 @@ class BoardgameActivity : AppCompatActivity() {
         val btnAddGame: Button = dialog.findViewById(R.id.btnAddGame)
         val etGame: EditText = dialog.findViewById(R.id.etGame)
         val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
+
         btnAddGame.setOnClickListener {
             val currentGame = etGame.text.toString()
             if(currentGame.isNotEmpty()){
@@ -75,12 +76,13 @@ class BoardgameActivity : AppCompatActivity() {
                 val selectedRadioButton: RadioButton = rgCategories.findViewById(selectedId)
                 val currentCategory: GameCategory =
                     when(selectedRadioButton.text){
-                    getString(R.string.dialog_cooperative_category) -> GameCategory.Cooperative
+                    getString(R.string.dialog_cooperative_category) -> GameCategory.Cooperative //si su texto es el de la String indicada, le asigna la categoría correspondiente
                     getString(R.string.dialog_deckbuilding_category) -> GameCategory.Deckbuilding
                     getString(R.string.dialog_euro_category) -> GameCategory.Euro
                     getString(R.string.dialog_LCG_category) -> GameCategory.LCG
                     else -> GameCategory.Legacy
                 }
+                //a la lista (dataclass) games le añadimos un juego pasandole el nombre de "currentGame" y la categoria de "currentCategory"
                 games.add(Game(currentGame, currentCategory))
                 updateGames()
                 dialog.hide()
@@ -90,6 +92,12 @@ class BoardgameActivity : AppCompatActivity() {
         dialog.show()
     }
     private fun updateGames(){
+
+        val selectedCategories: List<GameCategory> = categories.filter { it.isSelected }
+        val newGames = games.filter { selectedCategories.contains(it.category) }
+        gamesAdapter.games = newGames
+
+        //notificamos un cambio hecho a la lista (dataclass)games y gamesAdapter
         gamesAdapter.notifyDataSetChanged()
     }
 
