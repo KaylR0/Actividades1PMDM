@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="colorPalette.ColorPalette"
-    >
+    tools:context=".colorPalette.ColorPalette"
+    tools:ignore="ExtraText">
     <!-- LAYOUT PARA ENCABEZADO Y RECYCLERVIEW -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,8 +15,9 @@
         >
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/bgapp_background_app">
+        android:layout_height="0dp"
+        android:backgroundTint="@color/bgapp_background_app"
+        android:layout_weight="1">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,76 +31,75 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvVerticalColors"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="40dp"
-        android:layout_marginTop="100dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:padding="40dp" />
     </LinearLayout>
 
     <!-- LAYOUT PARA CARDVIEWS Y BOTÓN -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="40dp"
-            android:layout_marginTop="100dp">
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvHorizontalColor1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:cardBackgroundColor="@color/v_color1_20"
-        app:cardCornerRadius="16dp"
-        android:layout_marginVertical="20dp"
-        ><TextView
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="40dp"
+        android:layout_marginTop="100dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHorizontalColor1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/h_color1_20"
+            app:cardCornerRadius="16dp"
+            android:layout_marginVertical="20dp"
+            ><TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/h1_20"
                 android:layout_gravity="start|top"
                 style="bold"
-                ></TextView>
+            ></TextView>
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cvHorizontalColor2"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:cardBackgroundColor="@color/v_color1_20"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/h_color2_50"
             app:cardCornerRadius="16dp"
             android:layout_marginVertical="20dp"
             ><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/h2_50"
-            android:layout_gravity="start|top"
-            style="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/h2_50"
+                android:layout_gravity="start|top"
+                style="bold"
             ></TextView>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvHorizontalColor3"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:cardBackgroundColor="@color/v_color1_20"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/h_color3_80"
             app:cardCornerRadius="16dp"
             android:layout_marginVertical="20dp"
             ><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/h3_80"
-            android:layout_gravity="start|top"
-            style="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/h3_80"
+                android:layout_gravity="start|top"
+                style="bold"
             ></TextView>
-
         </androidx.cardview.widget.CardView>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:text="CHANGE COLOR"
-        app:layout_constraintBottom_toBottomOf="@+id/rvVerticalColors"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="40dp"
+            android:text="CHANGE COLOR">
         </Button>
     </LinearLayout>
 </FrameLayout>

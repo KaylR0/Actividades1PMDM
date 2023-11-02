@@ -34,7 +34,7 @@ class GamesViewHolder (view: View) : RecyclerView.ViewHolder(view) {
             //sino cuando seleccionemos el texto nos desmarcará la casilla
         }
 
-        tvGame.text = game.name
+        tvGame.text = game.name  //LE ASIGNO EL NOMBRE DEL juego al textView de item_game a
         val color =
             when(game.category){
             GameCategory.Cooperative -> R.color.bgapp_cooperative_category

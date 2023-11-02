@@ -19,8 +19,10 @@ class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //Si la categoria está seleccionada que cambie de color
        val color = if (gameCategory.isSelected){
            R.color.bgapp_background_card
+       //if nombre de category = nombre de categoria en Game -> viewholderGame desactivarlo o hacerlo no visible
        }else{
            R.color.bgapp_background_disabled
+
        }
         viewContainer.setCardBackgroundColor(ContextCompat.getColor(viewContainer.context, color))
         itemView.setOnClickListener{ onItemSelected(layoutPosition) }

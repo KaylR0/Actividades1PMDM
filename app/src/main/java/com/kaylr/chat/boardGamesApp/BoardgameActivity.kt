@@ -111,8 +111,4 @@ class BoardgameActivity : AppCompatActivity() {
         updateGames()
     }
 
-
-
-
-
 }
