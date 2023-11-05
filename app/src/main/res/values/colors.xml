@@ -34,15 +34,21 @@
     <color name="bgapp_cooperative_category">#D016F1</color>
     <color name="bgapp_legacy_category">#EDF351</color>
 
-    <color name="v_color1_20">#33FFE149</color>
-    <color name="v_color2_35">#59A33926</color>
-    <color name="v_color3_50">#80A39D26</color>
-    <color name="v_color4_65">#A64D64D5</color>
-    <color name="v_color5_80">#CCE15B43</color>
+    <color name="v_color1_20">#33FFD500</color>
+    <color name="v_color2_35">#59FF2700</color>
+    <color name="v_color3_50">#8043FF00</color>
+    <color name="v_color4_65">#A6002BFF</color>
+    <color name="v_color5_80">#CCD800FF</color>
 
-    <color name="h_color1_20">#33CD4026</color>
-    <color name="h_color2_50">#80B86C5E</color>
-    <color name="h_color3_80">#CC601B0F</color>
+    <color name="h_color1_20">#3363FF00</color>
+    <color name="h_color2_50">#80FF2800</color>
+    <color name="h_color3_80">#CC0055FF</color>
 
-
+    <color name="red">#CCFF0000</color>
+    <color name="orange">#FF9800</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="green">#CC00FF19</color>
+    <color name="turquoise">#CC00FFCC</color>
+    <color name="blue">#CC0037FF</color>
+    <color name="purple">#CC8000FF</color>
 </resources>

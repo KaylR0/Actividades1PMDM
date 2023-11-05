@@ -13,48 +13,48 @@ class VerticalColorViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private val tvVerticalColor:TextView = view.findViewById(R.id.tvVerticalColor)
     fun render(vColor: VerticalColor){
         when(vColor.name){
-            VerticalColor.name -> {
+            R.string.v1_20.toString() -> {
                 tvVerticalColor.text = "V1 (20%)"
-                divider.setBackgroundColor(
+                viewContainerVC.setBackgroundColor(
                     ContextCompat.getColor(
-                        divider.context,
-                        R.color.bgapp_cooperative_category
+                        viewContainerVC.context,
+                        R.color.v_color1_20
                     )
                 )
             }
-            GameCategory.Deckbuilding -> {
+            R.string.v2_35.toString() -> {
                 tvVerticalColor.text = "V2 (35%)"
-                divider.setBackgroundColor(
+                viewContainerVC.setBackgroundColor(
                     ContextCompat.getColor(
-                        divider.context,
-                        R.color.bgapp_deckbuilding_category
+                        viewContainerVC.context,
+                        R.color.v_color2_35
                     )
                 )
             }
-            GameCategory.Euro -> {
+            R.string.v3_50.toString() -> {
                 tvVerticalColor.text = "V3 (50%)"
-                divider.setBackgroundColor(
+                viewContainerVC.setBackgroundColor(
                     ContextCompat.getColor(
-                        divider.context,
-                        R.color.bgapp_euro_category
+                        viewContainerVC.context,
+                        R.color.v_color3_50
                     )
                 )
             }
-            GameCategory.LCG -> {
+            R.string.v4_65.toString() -> {
                 tvVerticalColor.text = "V4 (65%)"
-                divider.setBackgroundColor(
+                viewContainerVC.setBackgroundColor(
                     ContextCompat.getColor(
-                        divider.context,
-                        R.color.bgapp_lcg_category
+                        viewContainerVC.context,
+                        R.color.v_color4_65
                     )
                 )
             }
-            GameCategory.Legacy -> {
+            R.string.v5_80.toString() -> {
                 tvVerticalColor.text = "V5 (80%)"
-                divider.setBackgroundColor(
+                viewContainerVC.setBackgroundColor(
                     ContextCompat.getColor(
-                        divider.context,
-                        R.color.bgapp_legacy_category
+                        viewContainerVC.context,
+                        R.color.v_color5_80
                     )
                 )
             }

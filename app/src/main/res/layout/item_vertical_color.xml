@@ -6,7 +6,6 @@
     android:layout_width="120dp"
     android:layout_height="match_parent"
     app:cardBackgroundColor="@color/v_color1_20"
-    app:cardCornerRadius="16dp"
     android:layout_marginHorizontal="8dp"
     android:layout_marginVertical="16dp">
     <LinearLayout
@@ -20,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/v1_20"
+            android:background="@color/black"
             android:layout_gravity="start|top"
             style="bold"
             ></TextView>
