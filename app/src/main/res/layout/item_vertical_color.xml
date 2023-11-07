@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/v1_20"
+            android:textColor="@color/white"
             android:background="@color/black"
             android:layout_gravity="start|top"
             style="bold"

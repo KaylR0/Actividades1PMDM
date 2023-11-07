@@ -18,4 +18,5 @@ RecyclerView.Adapter<VerticalColorViewHolder>() {
     }
 
     override fun getItemCount()=color.size
+
 }
