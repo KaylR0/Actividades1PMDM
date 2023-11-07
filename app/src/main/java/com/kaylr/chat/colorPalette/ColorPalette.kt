@@ -8,13 +8,9 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.cardview.widget.CardView
-import androidx.core.graphics.alpha
-import androidx.core.graphics.toColor
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kaylr.chat.R
-import com.kaylr.chat.boardGamesApp.GameCategory
-
 
 class ColorPalette : AppCompatActivity() {
     private lateinit var rvVerticalColor: RecyclerView //RECYCLER_ColorPalette
@@ -33,10 +29,8 @@ class ColorPalette : AppCompatActivity() {
         btnChangeColor = findViewById(R.id.btnChangeColor)
     }
     private fun initUI(){
-       verticalColorAdapter = VerticalColorAdapter(vColors)//{ position -> onColorSelected(position) } //RECYCLER_vColor
-
+        verticalColorAdapter = VerticalColorAdapter(vColors)//{ position -> onColorSelected(position) } //RECYCLER_vColor
         rvVerticalColor.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //RECYCLER_vColor
-
         rvVerticalColor.adapter = verticalColorAdapter //RECYCLER_vColor
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,57 +52,39 @@ class ColorPalette : AppCompatActivity() {
         val cvH2: CardView = findViewById(R.id.cvHorizontalColor2)
         val cvH3: CardView = findViewById(R.id.cvHorizontalColor3)
 
-
         btnApplyColor.setOnClickListener {
-
             val selectedBarRadioButton: RadioButton = rgBars.findViewById(rgBars.checkedRadioButtonId)
             val selectedColorRadioButton: RadioButton = rgColors.findViewById(rgColors.checkedRadioButtonId)
-            var currentColor: Int = R.color.black
-            var op20: Int = vColors[0].color.alpha
-            var op35: Int = vColors[1].color.alpha
-            var op50: Int = vColors[2].color.alpha
-            var op65: Int = vColors[3].color.alpha
-            var op80: Int = vColors[4].color.alpha
+            var currentColor: Array<Int> = arrayOf(R.color.black20,R.color.black35,R.color.black50,R.color.black65,R.color.black80)
 
             when(selectedColorRadioButton.text.toString()){
-                getString(R.string.white) -> currentColor = R.color.white
-                getString(R.string.red) -> currentColor = R.color.red
-                getString(R.string.orange) -> currentColor = R.color.orange
-                getString(R.string.yellow) -> currentColor = R.color.yellow
-                getString(R.string.green) -> currentColor = R.color.green
-                getString(R.string.turquoise) -> currentColor = R.color.turquoise
-                getString(R.string.blue) -> currentColor = R.color.blue
-                getString(R.string.purple) -> currentColor = R.color.purple
-                getString(R.string.black) -> currentColor = R.color.black
+                getString(R.string.white) -> currentColor = arrayOf(R.color.white20,R.color.white35,R.color.white50,R.color.white65,R.color.white80)
+                getString(R.string.red) -> currentColor = arrayOf(R.color.red20,R.color.red35,R.color.red50,R.color.red65,R.color.red80)
+                getString(R.string.orange) -> currentColor = arrayOf(R.color.orange20,R.color.orange35,R.color.orange50,R.color.orange65,R.color.orange80)
+                getString(R.string.yellow) -> currentColor = arrayOf(R.color.yellow20,R.color.yellow35,R.color.yellow50,R.color.yellow65,R.color.yellow80)
+                getString(R.string.green) -> currentColor = arrayOf(R.color.green20,R.color.green35,R.color.green50,R.color.green65,R.color.green80)
+                getString(R.string.turquoise) -> currentColor = arrayOf(R.color.turquoise20,R.color.turquoise35,R.color.turquoise50,R.color.turquoise65,R.color.turquoise80)
+                getString(R.string.blue) -> currentColor = arrayOf(R.color.blue20,R.color.blue35,R.color.blue50,R.color.blue65,R.color.blue80)
+                getString(R.string.purple) -> currentColor = arrayOf(R.color.purple20,R.color.purple35,R.color.purple50,R.color.purple65,R.color.purple80)
+                getString(R.string.black) -> currentColor = arrayOf(R.color.black20,R.color.black35,R.color.black50,R.color.black65,R.color.black80)
             }
             when(selectedBarRadioButton.text.toString()){
-                getString(R.string.h1_20) -> cvH1.setCardBackgroundColor(getColor(currentColor)) //si su texto es el de la String indicada, le asigna el color correspondiente
-                getString(R.string.h2_50) -> cvH2.setCardBackgroundColor(getColor(currentColor))
-                getString(R.string.h3_80) -> cvH3.setCardBackgroundColor(getColor(currentColor))
-                getString(R.string.v1_20) -> vColors[0].color= getColor(currentColor)
-                getString(R.string.v2_35) -> vColors[1].color= getColor(currentColor)
-                getString(R.string.v3_50) -> vColors[2].color= getColor(currentColor)
-                getString(R.string.v4_65) -> vColors[3].color= getColor(currentColor)
-                getString(R.string.v5_80) -> vColors[4].color= getColor(currentColor)
+                getString(R.string.h1_20) -> cvH1.setCardBackgroundColor(getColor(currentColor[0])) //si su texto es el de la String indicada, le asigna el color correspondiente
+                getString(R.string.h2_50) -> cvH2.setCardBackgroundColor(getColor(currentColor[2]))
+                getString(R.string.h3_80) -> cvH3.setCardBackgroundColor(getColor(currentColor[4]))
+                getString(R.string.v1_20) -> vColors[0].color= getColor(currentColor[0])
+                getString(R.string.v2_35) -> vColors[1].color= getColor(currentColor[1])
+                getString(R.string.v3_50) -> vColors[2].color= getColor(currentColor[2])
+                getString(R.string.v4_65) -> vColors[3].color= getColor(currentColor[3])
+                getString(R.string.v5_80) -> vColors[4].color= getColor(currentColor[4])
             }
-
-                //a la lista (dataclass) games le añadimos un juego pasandole el nombre de "currentGame" y la categoria de "currentCategory"
-              /*  games.add(Game(currentGame, currentCategory))*/
                 updateVerticalColors()
                 dialog.hide()
-
-
         }
         dialog.show()
-
-
     }
-
     private fun updateVerticalColors() {
-        //notificamos un cambio hecho a la lista (dataclass)games y gamesAdapter
+        //notificamos un cambio hecho a la lista (dataclass) VerticalColor
         rvVerticalColor.adapter?.notifyDataSetChanged()
-
     }
-
-
 }

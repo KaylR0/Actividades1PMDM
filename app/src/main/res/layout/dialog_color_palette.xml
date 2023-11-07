@@ -118,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RadioButton
-                android:id="@+id/white"
+                android:id="@+id/rbWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
@@ -126,7 +126,7 @@
                 android:text="@string/white"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/red"
+                android:id="@+id/rbRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/red"
@@ -134,7 +134,7 @@
                 android:text="@string/red"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/orange"
+                android:id="@+id/rbOrange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/orange"
@@ -142,7 +142,7 @@
                 android:text="@string/orange"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/yellow"
+                android:id="@+id/rbYellow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/yellow"
@@ -150,7 +150,7 @@
                 android:text="@string/yellow"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/green"
+                android:id="@+id/rbGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/green"
@@ -158,7 +158,7 @@
                 android:text="@string/green"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/turquoise"
+                android:id="@+id/rbTurquoise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/turquoise"
@@ -166,7 +166,7 @@
                 android:text="@string/turquoise"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/blue"
+                android:id="@+id/rbBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/blue"
@@ -174,7 +174,7 @@
                 android:text="@string/blue"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/purple"
+                android:id="@+id/rbPurple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/purple"
@@ -182,7 +182,7 @@
                 android:text="@string/purple"
                 android:textColor="@color/white" />
             <RadioButton
-                android:id="@+id/black"
+                android:id="@+id/rbBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/black"
