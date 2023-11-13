@@ -5,7 +5,7 @@
     android:id="@+id/viewContainerVerticalColor"
     android:layout_width="120dp"
     android:layout_height="match_parent"
-    app:cardBackgroundColor="@color/v_color1_20"
+    app:cardBackgroundColor="@color/red20"
     android:layout_marginHorizontal="8dp"
     android:layout_marginVertical="16dp">
     <LinearLayout

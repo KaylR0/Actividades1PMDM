@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.kaylr.chat.colorPalette.ColorPalette
 import com.kaylr.chat.boardGamesApp.BoardgameActivity
+import recyclerViewSimple.RvSimple
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,8 @@ class MenuActivity : AppCompatActivity() {
         btnBoardgame.setOnClickListener {navigateToBoardgame()}
         val btnColorPalette = findViewById<Button>(R.id.btnColorPalette)
         btnColorPalette.setOnClickListener{ navigateToColorPalette() }
+        val btnRvSimple = findViewById<Button>(R.id.btnRvSimple)
+        btnRvSimple.setOnClickListener{ navigateToRvSimple() }
     }
     private fun navigateToHelloApp(){
         val intent = Intent(this, HelloActivity::class.java)
@@ -44,6 +47,9 @@ class MenuActivity : AppCompatActivity() {
     }
     private fun navigateToColorPalette(){
         val intent = Intent(this, ColorPalette::class.java)
+        startActivity(intent)
+    }private fun navigateToRvSimple(){
+        val intent = Intent(this, RvSimple::class.java)
         startActivity(intent)
     }
 }

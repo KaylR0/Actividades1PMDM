@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bgapp_background_app">
 <LinearLayout
     android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
             android:id="@+id/rbH1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#33000000"
+            app:buttonTint="@color/black20"
             android:checked="false"
             android:text="@string/h1_20"
             android:textColor="@color/white" />
@@ -41,7 +41,7 @@
             android:id="@+id/rbH2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#80000000"
+            app:buttonTint="@color/black50"
             android:checked="false"
             android:text="@string/h2_50"
             android:textColor="@color/white" />
@@ -49,7 +49,7 @@
             android:id="@+id/rbH3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#CC000000"
+            app:buttonTint="@color/black80"
             android:checked="false"
             android:text="@string/h3_80"
             android:textColor="@color/white" />
@@ -57,7 +57,7 @@
             android:id="@+id/rbV1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#33000000"
+            app:buttonTint="@color/black20"
             android:checked="false"
             android:text="@string/v1_20"
             android:textColor="@color/white" />
@@ -65,7 +65,7 @@
             android:id="@+id/rbV2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#59000000"
+            app:buttonTint="@color/black35"
             android:checked="false"
             android:text="@string/v2_35"
             android:textColor="@color/white" />
@@ -73,7 +73,7 @@
             android:id="@+id/rbV3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#80000000"
+            app:buttonTint="@color/black50"
             android:checked="false"
             android:text="@string/v3_50"
             android:textColor="@color/white" />
@@ -81,7 +81,7 @@
             android:id="@+id/rbV4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#A6000000"
+            app:buttonTint="@color/black65"
             android:checked="false"
             android:text="@string/v4_65"
             android:textColor="@color/white" />
@@ -89,7 +89,7 @@
             android:id="@+id/rbV5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="#CC000000"
+            app:buttonTint="@color/black80"
             android:checked="true"
             android:text="@string/v5_80"
             android:textColor="@color/white" />
@@ -121,7 +121,7 @@
                 android:id="@+id/rbWhite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/white"
+                app:buttonTint="@color/white"
                 android:checked="false"
                 android:text="@string/white"
                 android:textColor="@color/white" />
@@ -129,7 +129,7 @@
                 android:id="@+id/rbRed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/red"
+                app:buttonTint="@color/red"
                 android:checked="false"
                 android:text="@string/red"
                 android:textColor="@color/white" />
@@ -137,7 +137,7 @@
                 android:id="@+id/rbOrange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/orange"
+                app:buttonTint="@color/orange"
                 android:checked="false"
                 android:text="@string/orange"
                 android:textColor="@color/white" />
@@ -145,7 +145,7 @@
                 android:id="@+id/rbYellow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/yellow"
+                app:buttonTint="@color/yellow"
                 android:checked="false"
                 android:text="@string/yellow"
                 android:textColor="@color/white" />
@@ -153,7 +153,7 @@
                 android:id="@+id/rbGreen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/green"
+                app:buttonTint="@color/green"
                 android:checked="false"
                 android:text="@string/green"
                 android:textColor="@color/white" />
@@ -161,7 +161,7 @@
                 android:id="@+id/rbTurquoise"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/turquoise"
+                app:buttonTint="@color/turquoise"
                 android:checked="false"
                 android:text="@string/turquoise"
                 android:textColor="@color/white" />
@@ -169,7 +169,7 @@
                 android:id="@+id/rbBlue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/blue"
+                app:buttonTint="@color/blue"
                 android:checked="false"
                 android:text="@string/blue"
                 android:textColor="@color/white" />
@@ -177,7 +177,7 @@
                 android:id="@+id/rbPurple"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/purple"
+                app:buttonTint="@color/purple"
                 android:checked="false"
                 android:text="@string/purple"
                 android:textColor="@color/white" />
@@ -185,7 +185,7 @@
                 android:id="@+id/rbBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:buttonTint="@color/black"
+                app:buttonTint="@color/black"
                 android:checked="true"
                 android:text="@string/black"
                 android:textColor="@color/white" />
