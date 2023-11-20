@@ -1,4 +1,4 @@
-package recyclerViewSimple
+package com.kaylr.chat.recyclerViewSimple
 
 import android.view.View
 import android.widget.TextView

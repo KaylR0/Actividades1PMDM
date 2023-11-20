@@ -1,4 +1,4 @@
-package recyclerViewSimple
+package com.kaylr.chat.recyclerViewSimple
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Chat"
         tools:targetApi="31">
         <activity
-            android:name="recyclerViewSimple.RvSimple"
+            android:name=".recyclerViewSimple.RvSimple"
             android:exported="false" />
         <activity
             android:name=".colorPalette.ColorPalette"
