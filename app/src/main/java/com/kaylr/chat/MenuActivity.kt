@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.kaylr.chat.colorPalette.ColorPalette
 import com.kaylr.chat.boardGamesApp.BoardgameActivity
-import recyclerViewSimple.RvSimple
+import com.kaylr.chat.recyclerViewSimple.RvSimple
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
