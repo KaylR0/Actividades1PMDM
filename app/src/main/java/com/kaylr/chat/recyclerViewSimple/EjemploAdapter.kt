@@ -1,4 +1,4 @@
-package recyclerViewSimple
+package com.kaylr.chat.recyclerViewSimple
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
