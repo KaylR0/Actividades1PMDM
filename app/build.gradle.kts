@@ -46,7 +46,7 @@ dependencies {
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    //Retrofit
+    //Retrofit - Permite hacer peticiones al servidor tipo: GET, POST, PUT, PATCH, DELETE y HEAD
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0") //sincronizarlas
 

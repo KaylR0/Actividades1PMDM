@@ -6,7 +6,7 @@ data class SuperHeroDetailResponse(
     @SerializedName("name") val name: String,
     @SerializedName("powerstats") val powerstats: PowerStatsResponse,
     @SerializedName("image") val image: SuperheroImageDetailResponse,
-    @SerializedName("biography") val biography:Biography
+    @SerializedName("biography") val biography: Biography
 )
 data class PowerStatsResponse(
     @SerializedName("intelligence") val intelligence: String,

@@ -55,6 +55,7 @@ class SuperHeroActivity : AppCompatActivity() {
 
     private fun searchByName(query: String) {
         binding.progressBar.isVisible = true
+        
         //.IO es para hilos secundarios
         //.MAIN es para el hilo principal
         CoroutineScope(Dispatchers.IO).launch {
