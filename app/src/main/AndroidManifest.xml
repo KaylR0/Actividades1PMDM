@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Chat"
         tools:targetApi="31">
         <activity
+            android:name=".animalesAPI.AnimalesMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".superHeroApp.DetailSuperHeroActivity"
             android:exported="false" />
         <activity
