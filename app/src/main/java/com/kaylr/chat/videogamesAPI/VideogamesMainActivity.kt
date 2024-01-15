@@ -1,4 +1,4 @@
-package com.kaylr.chat.animalesAPI
+package com.kaylr.chat.videogamesAPI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,13 +6,7 @@ import android.util.Log
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.kaylr.chat.R
-import com.kaylr.chat.databinding.ActivityAnimalesMainBinding
-import com.kaylr.chat.databinding.ActivitySuperHeroBinding
-import com.kaylr.chat.superHeroApp.ApiService
-import com.kaylr.chat.superHeroApp.SuperHeroActivity
-import com.kaylr.chat.superHeroApp.SuperHeroAdapter
-import com.kaylr.chat.superHeroApp.SuperHeroDataResponse
+import com.kaylr.chat.databinding.ActivityVideogamesMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,18 +14,18 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class AnimalesMainActivity : AppCompatActivity() {
+class VideogamesMainActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_ID = "extra_id"
-        const val MY_TOKEN = "w6m3yoEbDzJw4VFIuRbD/w==iaxKrWOXbIG4g3Mu"
+        const val MY_TOKEN = "bb19e1f42e3b48ed9b4be59e0aad0b17" //API KEY rawg
     }
-    private lateinit var binding: ActivityAnimalesMainBinding
+    private lateinit var binding: ActivityVideogamesMainBinding
     private lateinit var retrofit: Retrofit
-    private lateinit var adapter: SuperHeroAdapter
+    private lateinit var adapter: VideogamesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAnimalesMainBinding.inflate(layoutInflater)
+        binding = ActivityVideogamesMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         retrofit = getRetrofit()
         initUI()
@@ -46,10 +40,11 @@ class AnimalesMainActivity : AppCompatActivity() {
             }
             override fun onQueryTextChange(newText: String?) = false
         })
-        //adapter = AnimalsAdapter{animalsId -> navigateToDetail(animalsId)}
-        binding.rvAnimals.setHasFixedSize(true)
-        binding.rvAnimals.layoutManager = LinearLayoutManager(this)
-        binding.rvAnimals.adapter = adapter
+        adapter = VideogamesAdapter(emptyList())
+        /*animalsId -> navigateToDetail(animalsId)*/
+        binding.rvVideogames.setHasFixedSize(true)
+        binding.rvVideogames.layoutManager = LinearLayoutManager(this)
+        binding.rvVideogames.adapter = adapter
     }
 
     private fun searchByName(query: String) {
@@ -59,30 +54,28 @@ class AnimalesMainActivity : AppCompatActivity() {
         //.MAIN es para el hilo principal
         CoroutineScope(Dispatchers.IO).launch {
             //usamos corrutinas para que use otro hilo y que no se atasque el programa principal
-            val myResponse: Response<AnimalsDataResponse> =
-                retrofit.create(ApiService::class.java).getAnimals(query)
+            val myResponse: Response<VideogamesDataResponse> =
+                retrofit.create(ApiService::class.java).getVideogames(query)
             if (myResponse.isSuccessful) {
                 Log.i("Consulta", "Funciona :)")
-                val response: AnimalsDataResponse? = myResponse.body()
+                val response: VideogamesDataResponse? = myResponse.body()
                 if (response != null) {
                     Log.i("Cuerpo de la consulta", response.toString())
                     runOnUiThread {
-                        adapter.updateList(response.animals)
+                        adapter.updateList(response.videogames)
                         binding.progressBar.isVisible = false
                     }
                 }
             } else {
                 Log.i("Consulta", "No funciona :(")
             }
-
-
         }
     }
 
     private fun getRetrofit(): Retrofit {
         return Retrofit
             .Builder()
-            .baseUrl("https://api.api-ninjas.com/v1/animals?/${AnimalesMainActivity.MY_TOKEN}/")
+            .baseUrl("https://api.rawg.io/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

@@ -1,13 +1,19 @@
-package com.kaylr.chat.animalesAPI
+package com.kaylr.chat.videogamesAPI
 
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
-    @GET("search/{name}")
+    @GET("/games?key="+VideogamesMainActivity.MY_TOKEN)
+    //@Headers(VideogamesMainActivity.MY_TOKEN)
     // -> /api/7038753112847970/ delante si no va
-    suspend fun getAnimals(@Path("name") animalName:String): Response<AnimalsDataResponse>
+    suspend fun getVideogames(
+       /* @Path("name") videogamesName:String*/
+        @Query("search") videogamesName: String
+    ): Response<VideogamesDataResponse>
     //si usa corrutinas hay que usar "suspend"
 
    /* @GET("{id}")
