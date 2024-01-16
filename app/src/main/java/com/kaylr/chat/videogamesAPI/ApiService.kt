@@ -7,11 +7,11 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("/games?key="+VideogamesMainActivity.MY_TOKEN)
+    // no hay que poner "/" delante porque entiende que hay 2 "/"
+    @GET("games?key="+VideogamesMainActivity.MY_TOKEN)
     //@Headers(VideogamesMainActivity.MY_TOKEN)
     // -> /api/7038753112847970/ delante si no va
     suspend fun getVideogames(
-       /* @Path("name") videogamesName:String*/
         @Query("search") videogamesName: String
     ): Response<VideogamesDataResponse>
     //si usa corrutinas hay que usar "suspend"

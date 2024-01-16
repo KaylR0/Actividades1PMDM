@@ -9,10 +9,10 @@ class VideogamesDataResponse (
 )
 data class VideogamesItemResponse(
     @SerializedName("name") val name: String,
-    @SerializedName("rating") val rating: Integer,
-    @SerializedName("esrb_rating") val esrb_rating: esrbRating,
-    @SerializedName("platforms") val platforms: List<platform>,
-    @SerializedName("background_image") val background_image:String
+    //@SerializedName("rating") val rating: Integer,
+   // @SerializedName("esrb_rating") val esrb_rating: esrbRating,
+   // @SerializedName("platforms") val platforms: List<platform>,
+    @SerializedName("background_image") val background_image:String?
 )
 data class esrbRating(
     @SerializedName("id") val id: Integer,

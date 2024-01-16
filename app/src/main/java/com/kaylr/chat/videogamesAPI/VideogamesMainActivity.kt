@@ -32,7 +32,7 @@ class VideogamesMainActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        binding.searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener
+        binding.searchViewVideogames.setOnQueryTextListener(object: SearchView.OnQueryTextListener
         {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchByName(query.orEmpty())
@@ -48,7 +48,7 @@ class VideogamesMainActivity : AppCompatActivity() {
     }
 
     private fun searchByName(query: String) {
-        binding.progressBar.isVisible = true
+        binding.progressBarVideogames.isVisible = true
 
         //.IO es para hilos secundarios
         //.MAIN es para el hilo principal
@@ -63,7 +63,7 @@ class VideogamesMainActivity : AppCompatActivity() {
                     Log.i("Cuerpo de la consulta", response.toString())
                     runOnUiThread {
                         adapter.updateList(response.videogames)
-                        binding.progressBar.isVisible = false
+                        binding.progressBarVideogames.isVisible = false
                     }
                 }
             } else {

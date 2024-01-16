@@ -13,7 +13,8 @@ class VideogamesViewHolder(view: View): RecyclerView.ViewHolder(view) {
     //, navigateToDetailActivity: (String) -> Unit
     fun bind(videogamesItemResponse: VideogamesItemResponse) {
         //recibe los items de la lista
-        Picasso.get().load(videogamesItemResponse.background_image.toUri()).into(binding.ivVideogame);
+        Picasso.get().load(videogamesItemResponse.background_image?.toUri()).into(binding.ivVideogame)
+        //por si no recibe ninguna imagen es importante poner el nuller "?" y luego castearlo a Uri.
         binding.tvVideogames.text = videogamesItemResponse.name
         //binding.root.setOnClickListener { navigateToDetailActivity(videogamesItemResponse.name) }
         //al ponerle root le decimos que hacemos referencia a cualquier parte del layout. Bien pulsemos el texto o la imagen, hará el setOnClick.
