@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="match_parent"
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp"
     app:cardCornerRadius="22dp"
@@ -14,11 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_gravity="bottom">
-
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical"
+        android:layout_gravity="top">
         <TextView
             android:id="@+id/tvVideogames"
             android:layout_width="match_parent"
@@ -28,7 +30,55 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             tools:text="VIDEOJUEGO" />
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red35"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="RATING:" />
+        <TextView
+            android:id="@+id/tvResultRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red35"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="platforms" />
+        <TextView
+            android:id="@+id/tvEsrbRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange35"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="ESRBRATING:" />
+        <TextView
+            android:id="@+id/tvResultEsrbRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange35"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="resultESRB" />
+        <TextView
+            android:id="@+id/tvPlatforms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow35"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="PLATFORMS:" />
+        <TextView
+            android:id="@+id/tvResultPlatforms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/yellow35"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="platforms" />
 
-    </FrameLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

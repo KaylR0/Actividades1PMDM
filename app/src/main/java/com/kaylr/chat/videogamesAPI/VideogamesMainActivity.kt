@@ -43,7 +43,7 @@ class VideogamesMainActivity : AppCompatActivity() {
         adapter = VideogamesAdapter(emptyList())
         /*animalsId -> navigateToDetail(animalsId)*/
         binding.rvVideogames.setHasFixedSize(true)
-        binding.rvVideogames.layoutManager = LinearLayoutManager(this)
+        binding.rvVideogames.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rvVideogames.adapter = adapter
     }
 
