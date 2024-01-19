@@ -37,7 +37,7 @@
             android:background="@color/red35"
             android:textColor="@color/black"
             android:textSize="20sp"
-            tools:text="RATING:" />
+            android:text="RATING:" />
         <TextView
             android:id="@+id/tvResultRating"
             android:layout_width="match_parent"
@@ -53,7 +53,8 @@
             android:background="@color/orange35"
             android:textColor="@color/black"
             android:textSize="20sp"
-            tools:text="ESRBRATING:" />
+            android:text="SLUG:"
+             />
         <TextView
             android:id="@+id/tvResultEsrbRating"
             android:layout_width="match_parent"
@@ -69,7 +70,7 @@
             android:background="@color/yellow35"
             android:textColor="@color/black"
             android:textSize="20sp"
-            tools:text="PLATFORMS:" />
+            android:text="PLATFORMS:" />
         <TextView
             android:id="@+id/tvResultPlatforms"
             android:layout_width="match_parent"
