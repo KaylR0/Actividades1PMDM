@@ -22,21 +22,12 @@ class VideogamesViewHolder(view: View): RecyclerView.ViewHolder(view) {
         binding.tvResultEsrbRating.text = videogamesItemResponse.esrb_rating?.name
         if (videogamesItemResponse.platforms != null) {
             var longitud: Int = videogamesItemResponse.platforms.size -1
-            var plataforma: String
-            var casillaPlataformas: CharSequence? = binding.tvResultPlatforms.text
+            var plataforma: String? = ""
             for (i in 0..longitud){
-                plataforma = videogamesItemResponse.platforms[i].name.toString()
-                if (plataforma != null) {
-                    Log.i("plataforma",plataforma)}
-                 casillaPlataformas= "$casillaPlataformas - $plataforma"
-                if (casillaPlataformas != null) {
-                    Log.i("casillaPlataformas",casillaPlataformas)}
+                plataforma = "$plataforma\n${videogamesItemResponse.platforms[i].platform?.name}"
                 }
+            binding.tvResultPlatforms.text = plataforma
             }
-
-
-
-
 
         //binding.root.setOnClickListener { navigateToDetailActivity(videogamesItemResponse.name) }
         //al ponerle root le decimos que hacemos referencia a cualquier parte del layout. Bien pulsemos el texto o la imagen, hará el setOnClick.

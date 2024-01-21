@@ -6,7 +6,10 @@ import android.util.Log
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.kaylr.chat.databinding.ActivityVideogamesMainBinding
+import com.kaylr.chat.superHeroApp.SuperheroItemResponse
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,6 +30,11 @@ class VideogamesMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityVideogamesMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Agregamos LinearSnapHelper al RecyclerView para que se pare el scroll en cada item (hay que darle suave, sino se va)
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.rvVideogames)
+
         retrofit = getRetrofit()
         initUI()
     }
