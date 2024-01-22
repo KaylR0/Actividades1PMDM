@@ -103,4 +103,6 @@
     <color name="superhero_stat_durability">#03A9F4</color>
     <color name="superhero_stat_power">#FFEB3B</color>
     <color name="superhero_stat_combat">#673AB7</color>
+
+    <color name="settings_text_title">#A177C5</color>
 </resources>

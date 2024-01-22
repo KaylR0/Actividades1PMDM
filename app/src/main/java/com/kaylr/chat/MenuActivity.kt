@@ -7,6 +7,7 @@ import android.widget.Button
 import com.kaylr.chat.colorPalette.ColorPalette
 import com.kaylr.chat.boardGamesApp.BoardgameActivity
 import com.kaylr.chat.recyclerViewSimple.RvSimple
+import com.kaylr.chat.settings.SettingsActivity
 import com.kaylr.chat.superHeroApp.SuperHeroActivity
 import com.kaylr.chat.videogamesAPI.VideogamesMainActivity
 
@@ -31,7 +32,8 @@ class MenuActivity : AppCompatActivity() {
         btnSuperHero.setOnClickListener{ navigateToSuperHeroApp() }
         val btnVideogames = findViewById<Button>(R.id.btnVideogames)
         btnVideogames.setOnClickListener{ navigateToVideogamesApp() }
-
+        val btnSettings = findViewById<Button>(R.id.btnSettings)
+        btnSettings.setOnClickListener{ navigateToSettings() }
 
     }
     private fun navigateToHelloApp(){
@@ -66,6 +68,10 @@ class MenuActivity : AppCompatActivity() {
     }
     private fun navigateToVideogamesApp(){
         val intent = Intent(this, VideogamesMainActivity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToSettings(){
+        val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
 }
