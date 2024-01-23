@@ -2,6 +2,7 @@ package com.kaylr.chat.videogamesAPI
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kaylr.chat.R
 
@@ -9,6 +10,7 @@ import com.kaylr.chat.R
 class VideogamesAdapter ( private var videogamesList: List<VideogamesItemResponse> = emptyList())
         : RecyclerView.Adapter<VideogamesViewHolder>(){
         fun updateList(list: List<VideogamesItemResponse>) {
+
                 videogamesList = list
                 notifyDataSetChanged()
         }
@@ -19,8 +21,8 @@ class VideogamesAdapter ( private var videogamesList: List<VideogamesItemRespons
         }
 
         override fun onBindViewHolder(holder: VideogamesViewHolder, position: Int) {
+
                 holder.bind(videogamesList[position])
-                //,navigateToDetailActivity
         }
 
         override fun getItemCount() = videogamesList.size

@@ -57,7 +57,7 @@ class VideogamesMainActivity : AppCompatActivity() {
 
     private fun searchByName(query: String) {
         binding.progressBarVideogames.isVisible = true
-
+        binding.rvVideogames.layoutManager?.scrollToPosition(0)
         //.IO es para hilos secundarios
         //.MAIN es para el hilo principal
         CoroutineScope(Dispatchers.IO).launch {

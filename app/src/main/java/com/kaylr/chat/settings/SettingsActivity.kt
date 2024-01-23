@@ -22,14 +22,14 @@ import kotlinx.coroutines.launch
 
 class SettingsActivity : AppCompatActivity() {
     companion object {
-        const val VOLUME_LVL = "volume_lvl"
+        const val VOLUME_LVL_KEY = "volume_lvl"
         const val KEY_BLUETOOTH = "key_bluetooth"
         const val KEY_VIBRATION = "key_vibration"
         const val KEY_DARK_MODE = "key_dark_mode"
     }
     private lateinit var binding:ActivitySettingsBinding
     private var firstTime:Boolean = true
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+    val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 //Utilizamos "by" en vez de "=" para generar una única instancia de la clase (singleton)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,12 +58,7 @@ class SettingsActivity : AppCompatActivity() {
             it[intPreferencesKey("volume_lvl")] = value
         }
     }*/
-    //El comando dataStore.edit debe ir dentro de una corrutina (suspend)
-    private suspend fun saveVolume(value: Float) {
-        dataStore.edit { preferences ->
-            preferences[intPreferencesKey(VOLUME_LVL)] = value.toInt()
-        }
-    }
+
     private fun initUI() {
         binding.rsVolume.addOnChangeListener { _, value, _ ->
             Log.i("Volumen", "El valor es $value")
@@ -93,6 +88,12 @@ class SettingsActivity : AppCompatActivity() {
         }
 
     }
+    //El comando dataStore.edit debe ir dentro de una corrutina (suspend)
+    private suspend fun saveVolume(value: Float) {
+        dataStore.edit { preferences ->
+            preferences[intPreferencesKey(VOLUME_LVL_KEY)] = value.toInt()
+        }
+    }
     private suspend fun saveOptions(key: String, value: Boolean) {
         dataStore.edit { preferences ->
             preferences[booleanPreferencesKey(key)] = value
@@ -110,7 +111,7 @@ class SettingsActivity : AppCompatActivity() {
     private fun getSettings(): Flow<SettingsModel?> {
         return dataStore.data.map { preferences ->
             SettingsModel(
-                volume = preferences[intPreferencesKey(VOLUME_LVL)] ?: 50,
+                volume = preferences[intPreferencesKey(VOLUME_LVL_KEY)] ?: 50,
                 bluetooth = preferences[booleanPreferencesKey(KEY_BLUETOOTH)] ?: true,
                 darkMode = preferences[booleanPreferencesKey(KEY_DARK_MODE)] ?: false,
                 vibration = preferences[booleanPreferencesKey(KEY_VIBRATION)] ?: true

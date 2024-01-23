@@ -14,78 +14,116 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
-    <GridLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_gravity="top">
         <TextView
             android:id="@+id/tvVideogames"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="@color/blue35"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top|center"
+            android:paddingTop="10dp"
+            android:background="@color/black20"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:fontFamily="monospace"
+            android:elegantTextHeight="true"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowColor="@color/black"
+            android:shadowRadius="3"
             tools:text="VIDEOJUEGO" />
-    </GridLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:layout_marginTop="90dp"
-        android:orientation="vertical"
-        android:layout_gravity="top">
-
-        <TextView
-            android:id="@+id/tvRating"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/red35"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="RATING:" />
-        <TextView
-            android:id="@+id/tvResultRating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/red35"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            tools:text="platforms" />
-        <TextView
-            android:id="@+id/tvEsrbRating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/orange35"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="SLUG:"
-             />
-        <TextView
-            android:id="@+id/tvResultEsrbRating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/orange35"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            tools:text="resultESRB" />
-        <TextView
-            android:id="@+id/tvPlatforms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow35"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:text="PLATFORMS:" />
-        <TextView
-            android:id="@+id/tvResultPlatforms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow35"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            tools:text="platforms" />
-
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="bottom"
+            android:background="@color/black20"
+            android:orientation="horizontal"
+            android:layout_gravity="top">
+            <TextView
+                android:id="@+id/tvResultPlatforms"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowColor="@color/black"
+                android:shadowRadius="3"
+                tools:text="platforms" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:paddingTop="20dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="8dp"
+                android:orientation="vertical"
+                android:layout_gravity="top">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="0dp"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_gravity="end">
+                    <TextView
+                        android:id="@+id/tvResultRating"
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="23sp"
+                        android:fontFamily="monospace"
+                        android:textStyle="bold"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowColor="@color/black"
+                        android:shadowRadius="3"
+                        tools:text="rating" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/star"
+                        app:tint="@color/white" />
+                </LinearLayout>
+            <TextView
+                android:id="@+id/tvResultEsrbRating"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:gravity="end"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="monospace"
+                android:elegantTextHeight="true"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Overline"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowColor="@color/black"
+                android:shadowRadius="3"
+                tools:text="slug" />
+        </LinearLayout>
+    </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
